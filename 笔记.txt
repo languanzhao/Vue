@@ -1,0 +1,5 @@
+1.router-link不能直接添加点击事件，要@click.native="aaa()"
+
+2.router-link 为 a标签：注意书写 ul li a
+
+3.有时不可用/src/index.vue src做路径，会报错

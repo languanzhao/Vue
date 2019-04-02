@@ -1,0 +1,13 @@
+{
+    "banner":
+            [{
+                "id": 1,
+                "url": "https://languanzhao.github.io/img-for-app-project/banner.png"             
+            }, {
+                "id": 2,
+                "url": "https://languanzhao.github.io/img-for-app-project/banner1.png"
+            }, {
+                "id": 3,
+                "url": "https://languanzhao.github.io/img-for-app-project/banner2.png"
+            }]
+}
