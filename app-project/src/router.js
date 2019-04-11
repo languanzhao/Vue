@@ -40,54 +40,81 @@ const shop = () => import('./pages/shop/shop.vue')
 const address = () => import('./pages/User/address.vue')
 
 Vue.use(Router)
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
       path: '/Home',                                  //    /  默认为打开的那个页面
       name: 'Home',
-      component: Home
+      component: Home,
+			meta:{
+				title:'首页'
+			}
     },
     {
       path: '/Classify',
       name: 'Classify',
-      component: Classify
+      component: Classify,
+			meta:{
+				title:'分类'
+			}
     },
     {
       path: '/Message',
       name: 'Message',
-      component: Message
+      component: Message,
+			meta:{
+				title:'今日折扣'
+			}
     },
     {
       path: '/judgeCar',
       name: 'judgeCar',
-      component: judgeCar
+      component: judgeCar,
+			meta:{
+				title:'购物车'
+			}
     },
     {
       path: '/User',
       name: 'User',
-      component: User
+      component: User,
+			meta:{
+				title:'我的帆歌'
+			}
     },
     {
       path: '/SearchPage',
       name: 'SearchPage',
-      component: SearchPage
+      component: SearchPage,
+			meta:{
+				title:'搜索'
+			}
     },
 		{
 			path:'/register',
 			name:'register',
-			component: register
+			component: register,
+			meta:{
+				title:'注册'
+			}
 		},
 		{
 			path:'/',
 			name:'login',
-			component: login
+			component: login,
+			meta:{
+				title:'登录'
+			}
     },
     {
 			path:'/ProDetails',
 			name:'ProDetails',
       component: ProDetails,
+			meta:{
+				title:'详情'
+			},
       redirect:"/ProDetails/detailsPage",
       children:[{
           path:'/ProDetails/detailsPage',
@@ -100,13 +127,28 @@ export default new Router({
 		{
 			path:'/shop',
 			name:'shop',
-			component:shop
+			component:shop,
+			meta:{
+				title:'商店'
+			}
 		},
 		{
 			path:'/address',
 			name:'address',
-			component:address
+			component:address,
+			meta:{
+				title:'地址'
+			}
 		}
     
   ]
 })
+router.beforeEach((to, from, next) => {
+  /* 路由发生变化修改页面title */
+  if (to.meta.title) {
+    document.title = to.meta.title
+  }
+  next()
+})
+
+export default router
