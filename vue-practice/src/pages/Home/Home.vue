@@ -62,19 +62,24 @@ Vue.use(Toast);
 			}
 		},
 		methods:{
-		    ...mapMutations({                         //简写     mapMutations 头部调用 用import
-					add:"ADD"
-				}),
-// 			add(){
-// 				this.$store.commit("ADD")
-// 			}
-				add(){
-					this.$toast({
-						message:"已收藏",
-						type:"success",
-						duration:1000
-					})
-				},
+// 		    ...mapMutations({                         //简写     mapMutations 头部调用 用import
+// 					add:"ADD"
+// 				}),
+			add(){
+				this.$store.commit("ADD")
+				this.$toast({
+					message:"已收藏",
+					type:"success",
+					duration:1000
+				})
+			},
+// 				add(){
+// 					this.$toast({
+// 						message:"已收藏",
+// 						type:"success",
+// 						duration:1000
+// 					})
+// 				},
 			handler ({BMap, map}) {
 				console.log(BMap, map)
 				this.center.lng = 116.404
@@ -86,6 +91,7 @@ Vue.use(Toast);
 		//一般creadted钩子函数主要是用来初始化数据。
 		//mounted钩子函数一般是用来向后端发起请求拿到数据以后做一些业务处理。
 		mounted(){
+			// document.title = "首页"
 			var that = this
 			this.$http.get('https://easy-mock.com/mock/5c3ae8ce1de3741096451235/example/vue').then(function(res) {
 					that.list = res.data.prodetails_banner
@@ -117,10 +123,10 @@ Vue.use(Toast);
 .bm-view {
   width: 100%;
   height: 500px;
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
-.lHome >>> .van-toast--default{
-	width: 200px;
+.Home >>> .van-toast--default{
+	width: 2s00px;
 	height: 200px;
 }
 </style>

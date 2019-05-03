@@ -1,6 +1,5 @@
 <template>
 	<div class="home">
-
 		<Search></Search>
 		<van-pull-refresh v-model="isLoading" @refresh="onRefresh">
 			<banner class="banner" :info="bannerList"></banner>
@@ -13,6 +12,7 @@
 					</router-link>
 				</li>
 			</ul>
+
 			<div class="titleImg"><img src="https://languanzhao.github.io/img-for-app-project/home01.png" /></div>
 			<modelOne class="modelOne">
 				<template slot="left">
@@ -216,9 +216,7 @@
 
 <script>
 	import Vue from 'vue'
-	import {
-		PullRefresh
-	} from 'vant'
+	import { PullRefresh } from 'vant'
 	Vue.use(PullRefresh)
 	import Search from '../.././components/Search.vue'
 	import banner from './components/banner.vue'
@@ -305,7 +303,7 @@
 		position: relative;
 		left: 0px;
 		right: 0px;
-	margin: 0px auto;
+		margin: 0px auto;
 }
 
 	/* 首页轮播下的导航栏 */

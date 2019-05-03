@@ -6,7 +6,7 @@
 			<span @click="tochange()" ref="edit">编辑</span>
 		</div>
 		<div class="main">
-			<ShopCar v-if="bool" :showon="showon"></ShopCar>
+			<ShopCar v-if="bool" :showon="showon" :proItemsNo="proItemsNo"></ShopCar>
 			<NullCar v-else></NullCar>
 		</div>
 		

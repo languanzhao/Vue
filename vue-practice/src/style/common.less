@@ -1,0 +1,115 @@
+.w(@px){
+	width: unit(@px / 75,rem)
+}
+.h(@px){
+	height: unit(@px / 75,rem)
+}
+.fs(@px){
+	font-size: unit(@px / 75,rem)
+}
+.lh(@px){
+	line-height: unit(@px / 75,rem)
+}
+.l(@px:0){
+	left: unit(@px / 75,rem)
+}
+.r(@px:0){
+	right: unit(@px / 75,rem)
+}
+.t(@px:0){
+	top: unit(@px / 75,rem)
+}
+.b(@px:0){
+	bottom: unit(@px / 75,rem)
+}
+
+.bgc(@c){
+	background: @c;
+}
+
+//边框
+.bdr(@px) {
+  border-radius: unit(@px / 75, rem);
+}
+.bd(@px,@c){
+  border: unit(@px / 75,rem) solid @c;
+}
+.bdt(@px,@c){
+  border-top: unit(@px / 75, rem) solid @c;
+}
+.bdb(@px,@c){
+  border-bottom: unit(@px / 75, rem) solid @c;
+}
+.bdl(@px,@c){
+  border-left: unit(@px / 75, rem) solid @c;
+}
+.bdr(@px,@c){
+  border-right: unit(@px / 75, rem) solid @c;
+}
+
+//外边距
+.mg-4(@a,@b,@c,@d){
+	margin: unit(@a / 75, rem) unit(@b / 75, rem) unit(@c / 75, rem) unit(@d / 75, rem);
+}
+.mg-2(@a,@b){
+	margin: unit(@a / 75, rem) unit(@b / 75, rem);
+}
+.mg-3(@a,@b,@c){
+	margin: unit(@a / 75, rem) unit(@b / 75, rem) unit(@c / 75, rem);
+}
+.mt(@px) {
+  margin-top: unit(@px / 75, rem);
+}
+.ml(@px) {
+  margin-left: unit(@px / 75, rem);
+}
+.mr(@px) {
+  margin-right: unit(@px / 75, rem);
+}
+.mb(@px) {
+  margin-bottom: unit(@px / 75, rem);
+}
+
+//内边距
+.pd-4(@a,@b,@c,@d){
+	padding: unit(@a / 75, rem) unit(@b / 75, rem) unit(@c / 75, rem) unit(@d / 75, rem);
+}
+.pd-2(@a,@b){
+	padding: unit(@a / 75, rem) unit(@b / 75, rem);
+}
+.pd-3(@a,@b,@c){
+	padding: unit(@a / 75, rem) unit(@b / 75, rem) unit(@c / 75, rem);
+}
+.pt(@px) {
+  padding-top: unit(@px / 75, rem);
+}
+.pl(@px) {
+  padding-left: unit(@px / 75, rem);
+}
+.pr(@px) {
+  padding-right: unit(@px / 75, rem);
+}
+.pb(@px) {
+  padding-bottom: unit(@px / 75, rem);
+}
+
+//弹性布局 flex
+.f-s-a{
+	display: flex;
+	justify-content: space-around;
+}
+.f-s-b{
+	display: flex;
+	justify-content: space-between;
+}
+.f-c{
+	display: flex;
+	justify-content: center;
+}
+
+//一行文本溢出隐藏
+.ppOne {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

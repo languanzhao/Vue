@@ -48,49 +48,49 @@ const router = new Router({
       path: '/Home',                                  //    /  默认为打开的那个页面
       name: 'Home',
       component: Home,
-			meta:{
-				title:'首页'
-			}
+		meta:{
+			title:'首页'
+		}
     },
     {
       path: '/Classify',
       name: 'Classify',
       component: Classify,
-			meta:{
-				title:'分类'
-			}
+		meta:{
+			title:'分类'
+		}
     },
     {
       path: '/Message',
       name: 'Message',
       component: Message,
-			meta:{
-				title:'今日折扣'
-			}
+		meta:{
+			title:'今日折扣'
+		}
     },
     {
       path: '/judgeCar',
       name: 'judgeCar',
       component: judgeCar,
-			meta:{
-				title:'购物车'
-			}
+		meta:{
+			title:'购物车'
+		}
     },
     {
       path: '/User',
       name: 'User',
       component: User,
-			meta:{
-				title:'我的帆歌'
-			}
+		meta:{
+			title:'我的帆歌'
+		}
     },
     {
       path: '/SearchPage',
       name: 'SearchPage',
       component: SearchPage,
-			meta:{
-				title:'搜索'
-			}
+		meta:{
+			title:'搜索'
+		}
     },
 		{
 			path:'/register',
@@ -112,16 +112,19 @@ const router = new Router({
 			path:'/ProDetails',
 			name:'ProDetails',
       component: ProDetails,
-			meta:{
-				title:'详情'
-			},
       redirect:"/ProDetails/detailsPage",
       children:[{
           path:'/ProDetails/detailsPage',
-          component:detailsPage
+          component:detailsPage,
+		  meta:{
+		  	title:'详情'
+		  },
         },{
           path:'/ProDetails/praise',
-          component:praise
+          component:praise,
+		  meta:{
+		  	title:'详情'
+		  },
         }]
     },
 		{
@@ -129,7 +132,7 @@ const router = new Router({
 			name:'shop',
 			component:shop,
 			meta:{
-				title:'商店'
+				title:'帆歌商城'
 			}
 		},
 		{

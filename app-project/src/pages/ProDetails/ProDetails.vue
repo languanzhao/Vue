@@ -79,20 +79,9 @@
 			<div class="proInfo">
 				<h2>产品参数</h2>
 				<ul>
-					<li>
-						<span>产品系列:</span>套装系列
-					</li>
-					<li>
-						<span>产品颜色:</span>红 黄 绿 蓝
-					</li>
-					<li>
-						<span>尺寸大小:</span>S M L XL
-					</li>
-					<li>
-						<span>适合人群:</span>8-15岁
-					</li>
-					<li>
-						<span>产品指数:</span>普通 长款
+					<li v-for="item of productParameterArr" :key='item.id'>
+						<span>{{item.text1}}</span>
+						<span>{{item.text2}}</span>
 					</li>
 				</ul>
 				<b @click="hide()">确定</b>
@@ -102,20 +91,9 @@
 			<div class="proInfo">
 				<h2>产品参数</h2>
 				<ul>
-					<li>
-						<span>产品系列:</span>套装系列
-					</li>
-					<li>
-						<span>产品颜色:</span>红 黄 绿 蓝
-					</li>
-					<li>
-						<span>尺寸大小:</span>S M L XL
-					</li>
-					<li>
-						<span>适合人群:</span>8-15岁
-					</li>
-					<li>
-						<span>产品指数:</span>普通 长款
+					<li v-for="item of productParameterArr" :key='item.id'> 
+						<span>{{item.text1}}</span>
+						<span>{{item.text2}}</span>
 					</li>
 				</ul>
 				<b @click="hide()">确定</b>
@@ -125,18 +103,26 @@
 			<div class="otherway">
 				<h2>分享到</h2>
 				<ul>
-					<li>
+					<li v-for="item of shareArr">
+						<router-link :to="item.url">
+							<span class="iconfont" v-html="item.icon"></span>
+						</router-link>
+					</li>
+					<!-- <li>
 						<router-link to="">
 							<span class="iconfont">&#xe667;</span>
-						</router-link></li>
+						</router-link>
+					</li>
 					<li>
 						<router-link to="">
 							<span class="iconfont">&#xe609;</span>
-						</router-link></li>
+						</router-link>
+					</li>
 					<li>
 						<router-link to="">
 							<span class="iconfont">&#xe69e;</span>
-						</router-link></li>
+						</router-link>
+					</li> -->
 				</ul>
 			</div>
 		</van-popup>
@@ -189,7 +175,51 @@ export default {
           text: "买家口碑",
           url: "/ProDetails/praise"
         }
-      ]
+      ],
+			productParameterArr:[
+				{
+					id:1,
+					text1:"产品系列:",
+					text2:"套装系列"
+				},
+				{
+					id:2,
+					text1:"产品颜色:",
+					text2:"红 黄 绿 蓝"
+				},
+				{
+					id:3,
+					text1:"尺寸大小:",
+					text2:"S M L XL"
+				},
+				{
+					id:4,
+					text1:"适合人群:",
+					text2:"8-15岁"
+				},
+				{
+					id:5,
+					text1:"产品指数:",
+					text2:"普通 长款"
+				}
+			],
+			shareArr:[
+				{
+					id:1,
+					url:'',
+					icon:'&#xe667;'
+				},
+				{
+					id:2,
+					url:'',
+					icon:'&#xe609;'
+				},
+				{
+					id:3,
+					url:'',
+					icon:'&#xe69e;'
+				}
+			]
     };
   },
   methods: {
@@ -474,7 +504,7 @@ export default {
   width: inherit;
   height: 600px;
   position: absolute;
-  bottom: 0px;
+  bottom: 100px;
   background: #fff;
 }
 /* 点击时,内容设置小于整个屏幕的高度,就不会滑动,的同时定位 */
@@ -533,7 +563,7 @@ export default {
   font-size: 30px;
   box-sizing: border-box;
 }
-.proInfo ul li span {
+.proInfo ul li span:first-child {
   font-size: 20px;
   color: #000;
   letter-spacing: 10px;

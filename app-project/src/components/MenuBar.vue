@@ -8,30 +8,6 @@
 					<span class="text">{{item.title}}</span>
 				</router-link>
 			</li>
-			<!-- <li>
-				<router-link to="/Classify">
-					<span class="iconfont"></span>
-					<span class="text">分类</span>
-				</router-link>
-			</li>
-			<li>
-				<router-link to="/Message">
-					<span class="iconfont">&#xe86f;</span>
-					<span class="text">消息</span>
-				</router-link>
-			</li>
-      		<li>
-				<router-link to="/ShopCar">
-					<span class="iconfont">&#xe7a6;</span>
-					<span class="text">购物车</span>
-				</router-link>
-			</li>
-			<li>
-				<router-link to="/User">
-					<span class="iconfont"></span>
-					<span class="text">我的帆歌</span>
-				</router-link>
-			</li> -->
 		</ul>
   </div>
 </template>

@@ -24,7 +24,7 @@
 						<b>{{item.price | floatNumber | unit }}</b>
 					<form>
 							<button @click.prevent="min(item)">－</button>
-							<input type="text" v-model="item.val" @blur="num(item)"/>
+							<input type="text" v-model="item.val" @input="num(item)"/>
 							<button @click.prevent="add(item)">＋</button>
 					</form>
 						</div>
@@ -67,6 +67,7 @@
 </template>
 
 <script>
+	//父组件传值给子组件 https://v.youku.com/v_show/id_XMzk0MzgwMjM5Ng==.html
 import Vue from "vue";
 import { Dialog } from "vant";
 Vue.use(Dialog);
@@ -78,121 +79,7 @@ export default {
   props: ["showon"],
   data() {
     return {
-      list: [
-        // 					{
-        // 						"isChecked":false,
-        // 						"id":1,
-        // 						"src":require("../../img/shopcar01.png"),
-        // 						"type":"套装系列",
-        // 						"title":"2017新款两件套儿童春秋运动装韩版女孩",
-        // 						"text":"中大童外套衣服 白色时尚外套黑色长裤",
-        // 						"price":119,
-        // 						"val":1
-        // 					},{
-        // 						"isChecked":false,
-        // 						"id":2,
-        // 					  	"src":require("../../img/shopcar02.png"),
-        // 					  	"type":"套装系列",
-        // 					  	"title":"2017品牌秋季儿童牛仔背带裙两件套",
-        // 					  	"text":"中大童外套衣服 黑色条纹长袖外套长裤",
-        // 					  	"price":119,
-        // 						"val":1
-        // 					},{
-        // 						"isChecked":false,
-        // 						"id":3,
-        // 						"src":require("../../img/shopcar03.png"),
-        // 						"type":"套装系列",
-        // 						"title":"童装男童秋装套装2017新款韩版儿童牛仔",
-        // 						"text":"中大童外套衣服 蓝色磨白牛仔外衣裤装",
-        // 						"price":119,
-        // 						"val":1
-        // 					  }
-        // 					,
-        // 					  {
-        // 						  "isChecked":false,
-        // 						"id":4,
-        // 						"src":require("../../img/shopcar01.png"),
-        // 						"type":"套装系列",
-        // 						"title":"2017新款两件套儿童春秋运动装韩版女孩",
-        // 						"text":"中大童外套衣服 白色时尚外套黑色长裤",
-        // 						"price":119,
-        // 						"val":1
-        // 					},{
-        // 						"isChecked":false,
-        // 						"id":5,
-        // 					  	"src":require("../../img/shopcar02.png"),
-        // 					  	"type":"套装系列",
-        // 					  	"title":"2017品牌秋季儿童牛仔背带裙两件套",
-        // 					  	"text":"中大童外套衣服 黑色条纹长袖外套长裤",
-        // 					  	"price":119,
-        // 						"val":1
-        // 					},{
-        // 						"isChecked":false,
-        // 						"id":6,
-        // 						"src":require("../../img/shopcar03.png"),
-        // 						"type":"套装系列",
-        // 						"title":"童装男童秋装套装2017新款韩版儿童牛仔",
-        // 						"text":"中大童外套衣服 蓝色磨白牛仔外衣裤装",
-        // 						"price":119,
-        // 						"val":1
-        // 					  },
-        // 					  {
-        // 						"isChecked":false,
-        // 						"id":7,
-        // 						"src":require("../../img/shopcar01.png"),
-        // 						"type":"套装系列",
-        // 						"title":"2017新款两件套儿童春秋运动装韩版女孩",
-        // 						"text":"中大童外套衣服 白色时尚外套黑色长裤",
-        // 						"price":119,
-        // 						"val":1
-        // 					},{
-        // 						"isChecked":false,
-        // 						"id":8,
-        // 					  	"src":require("../../img/shopcar02.png"),
-        // 					  	"type":"套装系列",
-        // 					  	"title":"2017品牌秋季儿童牛仔背带裙两件套",
-        // 					  	"text":"中大童外套衣服 黑色条纹长袖外套长裤",
-        // 					  	"price":119,
-        // 						"val":1
-        // 					},{
-        // 						"isChecked":false,
-        // 						"id":9,
-        // 						"src":require("../../img/shopcar03.png"),
-        // 						"type":"套装系列",
-        // 						"title":"童装男童秋装套装2017新款韩版儿童牛仔",
-        // 						"text":"中大童外套衣服 蓝色磨白牛仔外衣裤装",
-        // 						"price":119,
-        // 						"val":1
-        // 					  },
-        // 					  {
-        // 						"isChecked":false,
-        // 						"id":10,
-        // 						"src":require("../../img/shopcar01.png"),
-        // 						"type":"套装系列",
-        // 						"title":"2017新款两件套儿童春秋运动装韩版女孩",
-        // 						"text":"中大童外套衣服 白色时尚外套黑色长裤",
-        // 						"price":119,
-        // 						"val":1
-        // 					},{
-        // 						"isChecked":false,
-        // 						"id":11,
-        // 					  	"src":require("../../img/shopcar02.png"),
-        // 					  	"type":"套装系列",
-        // 					  	"title":"2017品牌秋季儿童牛仔背带裙两件套",
-        // 					  	"text":"中大童外套衣服 黑色条纹长袖外套长裤",
-        // 					  	"price":119,
-        // 						"val":1
-        // 					},{
-        // 						"isChecked":false,
-        // 						"id":12,
-        // 						"src":require("../../img/shopcar03.png"),
-        // 						"type":"套装系列",
-        // 						"title":"童装男童秋装套装2017新款韩版儿童牛仔",
-        // 						"text":"中大童外套衣服 蓝色磨白牛仔外衣裤装",
-        // 						"price":119,
-        // 						"val":1
-        // 					  }
-      ]
+      list: []
     };
   },
   methods: {
@@ -242,24 +129,7 @@ export default {
       // }
     },
     checkedUn() {
-      // var b = this.$refs.checkedUn;
-      // this.list.forEach(function(item, i) {
-      //   if (b.checked) {
-      //     item.isChecked = !item.isChecked;
-      //     // if(item.isChecked === true){
-      //     // 	item.isChecked = false
-      //     // }else{
-      //     // 	item.isChecked = true
-      //     // }
-      //   } else {
-      //     item.isChecked = !item.isChecked;
-      //     // if(item.isChecked === true){
-      //     // 	item.isChecked = false
-      //     // }else{
-      //     // 	item.isChecked = true
-      //     // }
-      //   }
-      // })
+    
     },
     swipeleftFn(i) {
       //className wrapper替换成left
@@ -274,7 +144,8 @@ export default {
       localStorage.setItem("proItems", JSON.stringify(this.list));
       if (this.list.length === 0) {
         localStorage.clear("proItems");
-        this.$router.go(0); //跳转到本页
+        //window.onload()
+        //this.$router.go(0); //跳转到本页，即刷新一次
       }
     },
     toDelete() {
@@ -307,7 +178,8 @@ export default {
             );
             if (this.list.length === 0) {
               localStorage.clear("proItems")
-              this.$router.go(0); //跳转到本页，即刷新一次
+							//window.onload()
+              //this.$router.go(0); //跳转到本页，即刷新一次
             }
           })
           .catch(() => {})
@@ -371,6 +243,7 @@ export default {
       this.list = proInfo
       console.log(proInfo)
     } else {
+			console.log('aa')
       this.$emit("proItemsNo")
     }
   }

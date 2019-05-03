@@ -20,6 +20,8 @@
 			</ul>
 			<div class="less"></div>
 			<div class="more"></div>
+			
+			<div class="isLess">我是less</div>
       <MenuBar></MenuBar>
     </div>
 </template>
@@ -78,7 +80,7 @@ import { mapState } from 'vuex'                                  //vuex中的一
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 
 .user{background: red;}
 .user .header{background: #f4b469;width: 100%;height: 320px;position: relative;}
@@ -95,4 +97,10 @@ import { mapState } from 'vuex'                                  //vuex中的一
 
 .collecting{background:#fff;width:100%;height:40px;line-height:40px;display: flex;justify-content: space-around;} 
 
+@import '../.././style/public.less';
+.isLess{
+	color: @main;
+	padding-bottom: 200px;
+	.w(200);
+}
 </style>

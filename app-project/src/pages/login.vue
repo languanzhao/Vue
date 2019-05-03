@@ -20,18 +20,26 @@
 			<div class="otherway">
 				<h2>第三方登录</h2>
 				<ul>
-					<li>
+					<li v-for="item of loginArr">
+						<router-link :to="item.url">
+							<span class="iconfont" v-html="item.icon"></span>
+						</router-link>
+					</li>
+					<!-- <li>
 						<router-link to="/">
 							<span class="iconfont">&#xe667;</span>
-						</router-link></li>
+						</router-link>
+					</li>
 					<li>
 						<router-link to="/">
 							<span class="iconfont">&#xe609;</span>
-						</router-link></li>
+						</router-link>
+					</li>
 					<li>
 						<router-link to="/">
 							<span class="iconfont">&#xe69e;</span>
-						</router-link></li>
+						</router-link>
+					</li> -->
 				</ul>
 			</div>
 		</div>
@@ -47,7 +55,24 @@ export default {
   data() {
     return {
       account: "",
-      password: ""
+      password: "",
+			loginArr:[
+				{
+					id:1,
+					url:'/',
+					icon:'&#xe667;'
+				},
+				{
+					id:2,
+					url:'/Home',
+					icon:'&#xe609;'
+				},
+				{
+					id:3,
+					url:'/',
+					icon:'&#xe69e;'
+				}
+			]
     };
   },
   methods: {

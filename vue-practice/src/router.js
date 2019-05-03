@@ -13,29 +13,41 @@ import Message from './pages/Message/Message'
 import Shop from './pages/Shop/Shop'
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+	  meta:{
+	  	title:'首页'
+	  },
     },
 		{
 			path:"/Prodetails",
 			name:"Prodetails",
-			component:Prodetails
+			component:Prodetails,
+			meta:{
+				title:'详情'
+			},
 		},
 		{
 			path: '/Shop',
 			name: 'Shop',
-			component: Shop
+			component: Shop,
+			meta:{
+				title:'商店'
+			},
 		},
 		{
 			path: '/Message',
 			name: 'Message',
-			component: Message
+			component: Message,
+			meta:{
+				title:'消息'
+			},
 		},
     {
       path: '/About',
@@ -46,18 +58,38 @@ export default new Router({
 			children:[
 				{
 					path:"/About/detailsPage",
-					component:detailsPage
+					component:detailsPage,
+					meta:{
+						title:'细节'
+					},
 				},
 				{
 					path:"/About/commentPage",
-					component:commentPage
+					component:commentPage,
+					meta:{
+						title:'评论'
+					},
 				}
 				]
     },
 		{
 			path:'/User',
 			name:'User',
-			component:User
+			component:User,
+			meta:{
+				title:'用户'
+			},
 		}
-  ]
+  ],
+  
 })
+
+router.beforeEach((to, from, next) => {
+  /* 路由发生变化修改页面title */
+  if (to.meta.title) {
+    document.title = to.meta.title
+  }
+  next()
+})
+
+export default router

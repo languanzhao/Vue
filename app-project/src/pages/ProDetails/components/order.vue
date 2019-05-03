@@ -204,12 +204,11 @@
 	color: #fff;
 }
 .submit{
-	width: 175px;
-	height: 45px;
+	width: 220px;
+	height: 70px;
 	background: #ff9900;
 	color: #fff;
 	margin: 0 auto;
-	margin-bottom: 20px;
 	display: block;
 	border-radius: 10px;
 }

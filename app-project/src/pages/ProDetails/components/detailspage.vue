@@ -1,6 +1,6 @@
 <template>
     <div class="detailspage"> 
-				<img src="https://languanzhao.github.io/img-for-app-project/pro_details_content.png" class="pro_content">
+		<img src="https://languanzhao.github.io/img-for-app-project/pro_details_content.png" class="pro_content">
     </div>
 </template>
 

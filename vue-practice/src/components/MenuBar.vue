@@ -48,51 +48,101 @@
 					}
 				]
 			}
+		},
+		created () {
+			console.log("aaa")
+			
 		}
 	}
 </script>
-<style scoped>
+<style scoped lang="less">
+@import '.././style/common';
+// ul{
+// 	display: flex;
+// 	justify-content: space-between;
+// 	width: 100%;
+// 	height: 100px;
+// 	position: fixed;
+// 	bottom: 0;
+// 	background: #fff;
+// 	z-index: 999;
+// }
+// ul li{
+// 	width: 20%;
+// 	height: inherit;;
+// 	border: 1px solid;
+// }
+// ul li a{
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	flex-direction: column;
+// 	height: inherit;
+// }
+// ul li .iconfont{
+// 	color: #07C160;
+// }
+// ul li span:first-child{
+// 	font-size: 40px;
+// 	color: #710909;
+// }
+// ul li span{
+// 	color: #20A0FF;
+// 	font-size: 20px;
+// }
+// /* 点击后的效果 router-link 即a 标签自带高亮效果*/
+// ul li .router-link-exact-active{
+// 	background: #07C160;
+// }
+// ul li .router-link-exact-active span:first-child{
+// 	color: #fff;
+// }
+// ul li .router-link-exact-active span:last-child{
+// 	color: #fff;
+// }
+
+@color:#000;
 ul{
-	display: flex;
-	justify-content: space-between;
+	.f-s-b;
+	.h(100);
+	.b();
+	.bgc(#fff);
 	width: 100%;
-	height: 100px;
 	position: fixed;
-	bottom: 0;
-	background: #fff;
 	z-index: 999;
-}
-ul li{
-	width: 20%;
-	height: inherit;;
-	border: 1px solid;
-}
-ul li a{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	height: inherit;
-}
-ul li .iconfont{
-	color: #07C160;
-}
-ul li span:first-child{
-	font-size: 40px;
-	color: #710909;
-}
-ul li span{
-	color: #20A0FF;
-	font-size: 20px;
-}
-/* 点击后的效果 router-link 即a 标签自带高亮效果*/
-ul li .router-link-exact-active{
-	background: #07C160;
-}
-ul li .router-link-exact-active span:first-child{
-	color: #fff;
-}
-ul li .router-link-exact-active span:last-child{
-	color: #fff;
+	li{
+		width: 20%;
+		.h(100);
+		.bd(1,#000);
+		.iconfont{
+			color: #07C160;
+		}
+		span{
+			color: #20A0FF;
+			.fs(20);
+			&:first-child{
+				.fs(40);
+				color: #710909;
+			}
+		}
+		a{
+			.f-c;
+			align-items: center;
+			flex-direction: column;
+			.h(100)
+		}
+		.router-link-exact-active{
+			.bgc(#07C160);
+			span{
+				@color:#fff;  //最外层已定义为#000；但这需要修改故可在这重新定义
+				&:first-child{
+					color: @color;
+				}
+				&:last-child{
+					color: @color;
+				}
+			}
+		}
+	}
 }
 </style>

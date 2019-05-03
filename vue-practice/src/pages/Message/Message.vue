@@ -27,6 +27,14 @@
 		name:"Message",
 		components:{
 			Header
+		},
+		data(){
+			return{
+				
+			}
+		},
+		mounted(){
+			// document.title = "消息"
 		}
 	}
 </script>
