@@ -16,7 +16,7 @@
 				</template>
 		</Header>
 		
-		<van-swipe :autoplay="1000" indicator-color="#000">
+		<van-swipe :autoplay="2000" indicator-color="#000">
 			  <van-swipe-item v-for="item of list" :key="item.id" :width="750" :height="400">
 				  <router-link to=""> 
 					  <img :src="item.url" class="img"/>

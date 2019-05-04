@@ -83,6 +83,9 @@ export default {
     };
   },
   methods: {
+		proItemsNo(){
+			this.bool = false
+		},
     toBack() {
       this.$router.push("Home");
     },
